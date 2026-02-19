@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asistente de Envíos XD Colombia</title>
+    <title>Asistente de Envíos ML Colombia</title>
     <link rel="icon" href="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.21.22/mercadolibre/favicon.svg" type="image/svg+xml">
     <style>
         * {
@@ -20,96 +20,80 @@
             overflow: hidden;
         }
         
-        /* Header */
+        /* Header ultra compacto */
         header {
             background: linear-gradient(135deg, #3483FA 0%, #2968D8 100%);
             color: white;
-            padding: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            padding: 8px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             z-index: 100;
         }
         
         .header-content {
             max-width: 100%;
-            margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 15px;
-            padding: 0 20px;
+            gap: 12px;
         }
         
         .header-left {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
         }
         
         .logo {
-            height: 45px;
+            height: 28px;
         }
         
         h1 {
-            font-size: 26px;
+            font-size: 16px;
             font-weight: 600;
-        }
-        
-        .header-info {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            font-size: 14px;
         }
         
         .status-indicator {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             background: rgba(255, 255, 255, 0.2);
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
         }
         
         .status-dot {
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             background: #28a745;
             border-radius: 50%;
             animation: pulse 2s infinite;
-            box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
         }
         
         @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
-            }
+            0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
+            70% { box-shadow: 0 0 0 8px rgba(40, 167, 69, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
         }
         
-        /* Info banner */
+        /* Banner informativo - MUY compacto */
         .info-banner {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 15px 40px;
+            padding: 6px 20px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+            font-size: 12px;
         }
         
         .info-banner p {
             margin: 0;
-            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         
-        .info-banner strong {
-            font-weight: 600;
-        }
-        
-        /* Chat container - Full width */
+        /* Chat container - MAXIMIZADO */
         .chat-container {
             flex: 1;
             display: flex;
@@ -126,76 +110,70 @@
             background: white;
         }
         
-        /* Responsive design */
+        /* Responsive */
         @media (max-width: 768px) {
             header {
-                padding: 15px 10px;
-            }
-            
-            .header-content {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 0 10px;
-                gap: 10px;
-            }
-            
-            .header-info {
-                width: 100%;
-                justify-content: space-between;
-                font-size: 12px;
+                padding: 6px 15px;
             }
             
             h1 {
-                font-size: 18px;
+                font-size: 14px;
             }
             
             .logo {
-                height: 32px;
+                height: 24px;
             }
             
             .info-banner {
-                padding: 12px 20px;
-                font-size: 13px;
+                padding: 5px 15px;
+                font-size: 11px;
             }
             
             .status-indicator {
-                padding: 6px 12px;
+                padding: 3px 8px;
+                font-size: 11px;
+            }
+        }
+        
+        /* Ocultar elementos en pantallas muy pequeñas */
+        @media (max-width: 480px) {
+            .info-banner {
+                display: none;
+            }
+            
+            h1 {
                 font-size: 12px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header ultra compacto -->
     <header>
         <div class="header-content">
             <div class="header-left">
-                <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.21.22/mercadolibre/logo__large_plus.png" alt="Mercado Libre" class="logo">
-                <h1>Asistente de Envíos XD - Colombia</h1>
+                <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.21.22/mercadolibre/logo__large_plus.png" alt="ML" class="logo">
+                <h1>Asistente de Envíos 🇨🇴</h1>
             </div>
-            <div class="header-info">
-                <div class="status-indicator">
-                    <span class="status-dot"></span>
-                    <span>Chat Activo</span>
-                </div>
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span>Activo</span>
             </div>
         </div>
     </header>
     
-    <!-- Info banner -->
+    <!-- Banner ultra compacto -->
     <div class="info-banner">
-        <p>
-            💡 <strong>Consulta:</strong> SLAs • QR Label Less • Rutas Line Haul • Detalles de Shipments • Cumplimiento de Promesas
-        </p>
+        <p>💡 SLAs • QR LL • Line Haul • Shipments • Promesas</p>
     </div>
     
-    <!-- Chat container - Full width -->
+    <!-- Chat container - Ocupa todo el espacio restante -->
     <div class="chat-container">
         <iframe 
             id="chat-iframe" 
             src="https://web.furycloud.io/api/proxy/verdi_flows/webhook/94b1e194-ca6f-49b3-a14d-abd6754266f1/chat"
             allow="microphone; camera"
-            title="Chat de Asistente XD"
+            title="Chat de Asistente de Envíos"
         ></iframe>
     </div>
 </body>
